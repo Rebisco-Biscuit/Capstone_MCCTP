@@ -112,7 +112,7 @@ function ChatbotWidget() {
       {isOpen && (
         <section
           aria-label="MCCTEST chatbot"
-          className="flex h-[min(560px,calc(100vh-7rem))] w-[min(380px,calc(100vw-3rem))] flex-col overflow-hidden border border-slate-200 bg-white shadow-2xl"
+          className="flex h-[min(560px,calc(100vh-7rem))] w-[min(380px,calc(100vw-3rem))] flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl"
         >
           <header className="flex items-center justify-between bg-blue-950 px-5 py-4 text-white">
             <div>
@@ -140,7 +140,7 @@ function ChatbotWidget() {
                 }`}
               >
                 <p
-                  className={`max-w-[85%] px-4 py-3 text-sm leading-6 ${
+                  className={`max-w-[85%] rounded-lg px-4 py-3 text-sm leading-6 ${
                     message.role === 'user'
                       ? 'bg-blue-900 text-white'
                       : 'border border-slate-200 bg-white text-slate-700'
@@ -152,7 +152,7 @@ function ChatbotWidget() {
             ))}
 
             {isLoading && (
-              <p className="w-fit border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500">
+              <p className="w-fit rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm text-slate-500">
                 Thinking...
               </p>
             )}
@@ -193,12 +193,12 @@ function ChatbotWidget() {
                 placeholder="Type your question..."
                 maxLength={500}
                 disabled={isLoading}
-                className="min-w-0 flex-1 border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-800 focus:ring-1 focus:ring-blue-800 disabled:bg-slate-100"
+                className="min-w-0 flex-1 rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none transition focus:border-blue-800 focus:ring-1 focus:ring-blue-800 disabled:bg-slate-100"
               />
               <button
                 type="submit"
                 disabled={isLoading || !query.trim()}
-                className="bg-blue-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50"
+                className="rounded-lg bg-blue-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Send
               </button>
@@ -212,12 +212,11 @@ function ChatbotWidget() {
         aria-expanded={isOpen}
         aria-label={isOpen ? 'Close MCCTEST Assistant' : 'Open MCCTEST Assistant'}
         onClick={() => setIsOpen((open) => !open)}
-        className="flex items-center gap-3 rounded-full bg-blue-900 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-blue-900 text-white shadow-xl transition hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
       >
-        <span aria-hidden="true" className="text-lg">
-          ?
+        <span aria-hidden="true" className="text-xl">
+          💬
         </span>
-        {isOpen ? 'Close assistant' : 'Ask MCCTEST'}
       </button>
     </div>
   )
